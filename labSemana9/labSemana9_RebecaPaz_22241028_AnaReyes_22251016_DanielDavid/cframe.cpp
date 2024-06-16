@@ -1,0 +1,159 @@
+#include "cframe.h"
+#include "ui_cframe.h"
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include "cono.h"
+#include "esfera.h"
+#include <fstream>
+#include <QMessageBox>
+
+cFrame::cFrame(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::cFrame)
+{
+    ui->setupUi(this);
+    ui->lE_altura->setEnabled(false);
+    ui->lE_nombre->setEnabled(false);
+    ui->lE_radio->setEnabled(false);
+
+    arch = "Ciruclo.xls";
+}
+
+cFrame::~cFrame()
+{
+    delete ui;
+}
+
+
+void cFrame::on_btn_generar_clicked()
+{
+    generarListaPredefinida();
+}
+
+void cFrame::generarListaPredefinida()
+{
+    // Verificar si la lista está vacía
+    if (listaPolimorfica.empty()) {
+        ui->tE_listaPredef->setText("No hay elementos en la lista.");
+        std::cout << "Lista polimorfica vacia." << std::endl;
+        return;
+    }
+
+    // Limpiar el contenido anterior del QTextEdit
+    ui->tE_listaPredef->clear();
+    // Mostrar los datos en el QTextEdit
+    for (const auto& figura : listaPolimorfica) {
+        std::stringstream ss;
+        if (cono* c = dynamic_cast<cono*>(figura)) {
+            ss << "Cono: Nombre: " << c->getNombre() << ", Radio: " << c->getRad() << ", Altura: " << c->getAltura();
+        } else if (esfera* e = dynamic_cast<esfera*>(figura)) {
+            ss << "Esfera: Nombre: " << e->getNombre()<< ", Radio: " << e->getRad();
+        } else {
+            ss << "Círculo: Nombre: " << figura->getNombre() << ", Radio: " << figura->getRad();
+        }
+        ss << std::endl;
+        ui->tE_listaPredef->insertPlainText(QString::fromStdString(ss.str()));
+    }
+
+    std::cout << "Lista polimorfica predefinida generada." << std::endl;
+}
+
+void cFrame::limpiarListaPolimorfica()
+{
+    for (auto figura : listaPolimorfica) {
+        delete figura;
+    }
+    listaPolimorfica.clear();
+}
+
+
+void cFrame::on_btn_ingresar_clicked()
+{
+    double radio = ui->lE_radio->text().toDouble();
+    string nombre = ui->lE_nombre->text().toStdString();
+    double altura = ui->lE_altura->text().toDouble();
+
+    bool figuraExistente = false;
+
+    for(const auto* figura : listaPolimorfica){
+        if(figura->getNombre() == nombre){
+            figuraExistente = true;
+            break;
+        }
+    }
+
+    if (figuraExistente) {
+        QMessageBox::warning(this, "Figura Existente", "La figura ya está ingresada en la lista.");
+    } else {
+        if(ui->radioButton->isChecked()) {
+            cono* nuevoCono = new cono(radio, altura, nombre);
+            listaPolimorfica.push_back(nuevoCono);
+        }
+        else if(ui->radioButton_2->isChecked()) {
+            esfera* nuevaEsfera = new esfera(radio, nombre);
+            listaPolimorfica.push_back(nuevaEsfera);
+        }
+    }
+
+    ui->lE_radio->clear();
+    ui->lE_nombre->clear();
+    ui->lE_altura->clear();
+}
+
+
+void cFrame::on_radioButton_clicked()
+{
+    ui->lE_altura->setEnabled(true);
+    ui->lE_nombre->setEnabled(true);
+    ui->lE_radio->setEnabled(true);
+}
+
+
+void cFrame::on_radioButton_2_clicked()
+{
+    ui->lE_altura->setEnabled(false);
+    ui->lE_nombre->setEnabled(true);
+    ui->lE_radio->setEnabled(true);
+}
+
+
+void cFrame::on_btn_guardar_clicked()
+{
+    exportar();
+}
+
+void cFrame::exportar()
+{
+    if(listaPolimorfica.empty()){
+        QMessageBox::warning(this, "Advertencia", "No hay elementos en la lista para guardar.");
+        return;
+    }
+
+    ofstream archivo(arch, std::ios::out | std::ios::app);
+    if (!archivo.is_open()) {
+        QMessageBox::critical(this, "Error", "No se pudo abrir el archivo para escribir.");
+        return;
+    }
+
+    for (const auto& figura : listaPolimorfica) {
+        archivo << figura->getNombre() << "\t"; // Nombre en la primera columna
+        if (cono* c = dynamic_cast<cono*>(figura)) {
+            archivo << "Cono\t"; // Tipo en la segunda columna
+            archivo << figura->getRad() << "\t"; // Radio en la tercera columna
+            archivo << c->getAltura() << std::endl; // Altura en la última columna
+        } else if (esfera* e = dynamic_cast<esfera*>(figura)) {
+            archivo << "Esfera\t"; // Tipo en la segunda columna
+            archivo << figura->getRad() << "\t"; // Radio en la tercera columna
+            archivo << "\t" << std::endl; // No hay altura, dejar la columna vacía
+        } else {
+            archivo << "Circulo\t"; // Tipo en la segunda columna
+            archivo << figura->getRad() << "\t"; // Radio en la tercera columna
+            archivo << "\t" << std::endl; // No hay altura, dejar la columna vacía
+        }
+    }
+    archivo.close();
+    QMessageBox::information(this, "Guardado", "Los datos se han guardado correctamente en el archivo Excel.");
+
+}
+
