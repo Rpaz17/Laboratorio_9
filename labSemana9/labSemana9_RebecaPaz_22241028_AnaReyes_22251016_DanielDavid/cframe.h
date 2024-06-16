@@ -26,6 +26,8 @@ private slots:
     void on_btn_guardar_clicked();
     void exportar();
 
+    void on_btn_cargarAL_clicked();
+
 private:
     Ui::cFrame *ui;
     vector<Circulo*> listaPolimorfica;

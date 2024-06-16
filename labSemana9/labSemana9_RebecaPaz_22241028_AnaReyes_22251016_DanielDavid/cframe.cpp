@@ -7,6 +7,11 @@
 #include "esfera.h"
 #include <fstream>
 #include <QMessageBox>
+using std::string;
+using std::ifstream;
+using std::ofstream;
+using std::stringstream;
+
 
 cFrame::cFrame(QWidget *parent)
     : QMainWindow(parent)
@@ -156,4 +161,48 @@ void cFrame::exportar()
     QMessageBox::information(this, "Guardado", "Los datos se han guardado correctamente en el archivo Excel.");
 
 }
+
+
+void cFrame::on_btn_cargarAL_clicked()
+{
+    std::ifstream archivo(arch);
+
+     if (!archivo.is_open())
+     {
+         QMessageBox::warning(this, "ERORR!!", "Intente otra vez..");
+         return;
+     }
+
+     limpiarListaPolimorfica();
+
+    string linea;
+
+
+     while (std::getline(archivo, linea))
+     {
+         stringstream ss(linea);
+         string nombre, tipo;
+         double radio, altura = 0.0;
+
+         getline(ss, nombre, '\t');
+         getline(ss, tipo, '\t');
+         ss >> radio;
+
+         if (tipo == "Cono")
+         {
+             ss >> altura;
+             cono* nuevoCono = new cono(radio, altura, nombre);
+             listaPolimorfica.push_back(nuevoCono);
+         } else if (tipo == "Esfera")
+         {
+             esfera* nuevaEsfera = new esfera(radio, nombre);
+             listaPolimorfica.push_back(nuevaEsfera);
+         }
+     }
+
+     archivo.close();
+     QMessageBox::information(this, "Datos Cargados", "Su lista a sido cargada.");
+ }
+
+
 
