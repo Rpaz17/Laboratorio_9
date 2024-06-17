@@ -213,27 +213,27 @@ void cFrame::on_btn_cargarAL_clicked()
 
 void cFrame::on_btn_insertarBD_clicked()
 {
-   if(baseD.connect()){
-       if(listaPolimorfica.empty()){
-           QMessageBox::warning(this, "Advertencia", "No hay elementos en la lista para guardar.");
-           return;
-       }
+    if(baseD.connect()){
+        if(listaPolimorfica.empty()){
+            QMessageBox::warning(this, "Advertencia", "No hay elementos en la lista para guardar.");
+            return;
+        }
 
-       for (const auto& figura : listaPolimorfica) {
+        for (const auto& figura : listaPolimorfica) {
 
-           if (cono* c = dynamic_cast<cono*>(figura)) {
-               baseD.insertUpdateCono(c);
-           } else if (esfera* e = dynamic_cast<esfera*>(figura)) {
-               baseD.insertUpdateEsfera(e);
-           } else {
+            if (cono* c = dynamic_cast<cono*>(figura)) {
+                baseD.insertUpdateCono(c);
+            } else if (esfera* e = dynamic_cast<esfera*>(figura)) {
+                baseD.insertUpdateEsfera(e);
+            } else {
 
-           }
-           QMessageBox::information(this, "Datos cargados", "se exportaron los datos a la base de datos.");
-       }
+            }
+            QMessageBox::information(this, "Datos cargados", "se exportaron los datos a la base de datos.");
+        }
 
-   }else{
+    }else{
         QMessageBox::critical(this, "ERORR!!", "No hubo conexion a la basbe de datos.");
-   }
+    }
 
 }
 
@@ -245,7 +245,7 @@ void cFrame::on_btn_cargarBDL_clicked()
         limpiarListaPolimorfica();
         vector<Circulo*> listaFromDB = baseD.getListaFromDB();
         if(listaFromDB.empty()){
-             QMessageBox::warning(this, "Advertencia", "No hay elementos en la base de datos para importar.");
+            QMessageBox::warning(this, "Advertencia", "No hay elementos en la base de datos para importar.");
         }else{
             for (const auto& figura: listaFromDB)
             {
@@ -264,5 +264,15 @@ void cFrame::on_btn_cargarBDL_clicked()
 void cFrame::on_btn_salir_clicked()
 {
     exit(0);
+}
+
+bool cFrame::insertarUpdateCono(cono *nuevoCono)
+{
+
+}
+
+bool cFrame::insertarUpdateEsfera(esfera *nuevaEsfera)
+{
+
 }
 

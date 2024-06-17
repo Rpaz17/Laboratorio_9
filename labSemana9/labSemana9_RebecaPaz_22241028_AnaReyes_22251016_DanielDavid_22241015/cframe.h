@@ -25,14 +25,12 @@ private slots:
     void on_radioButton_2_clicked();
     void on_btn_guardar_clicked();
     void exportar();
-
     void on_btn_cargarAL_clicked();
-
     void on_btn_insertarBD_clicked();
-
     void on_btn_cargarBDL_clicked();
-
     void on_btn_salir_clicked();
+    bool insertarUpdateCono(cono* nuevoCono);
+    bool insertarUpdateEsfera(esfera* nuevaEsfera);
 
 private:
     Ui::cFrame *ui;
