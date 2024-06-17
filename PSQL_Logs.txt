@@ -1,0 +1,485 @@
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers>C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake -- PSQL_INCDIR="C:\Program Files\PostgreSQL\12\include" PSQL_LIBDIR="C:\Program Files\PostgreSQL\12\lib"
+Info: creating stash file C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\.qmake.stash
+
+Running configuration tests...
+Checking for DB2 (IBM)... no
+Checking for InterBase... no
+Checking for MySQL... no
+Checking for OCI (Oracle)... no
+Checking for ODBC... yes
+Checking for PostgreSQL... yes
+Checking for SQLite (version 2)... no
+Checking for TDS (Sybase)... no
+Done running configuration tests.
+
+Configure summary:
+
+Qt Sql Drivers:
+  DB2 (IBM) .............................. no
+  InterBase .............................. no
+  MySql .................................. no
+  OCI (Oracle) ........................... no
+  ODBC ................................... yes
+  PostgreSQL ............................. yes
+  SQLite2 ................................ no
+  SQLite ................................. yes
+    Using system provided SQLite ......... no
+  TDS (Sybase) ........................... no
+
+Qt is now configured for building. Just run 'mingw32-make'.
+Once everything is built, you must run 'mingw32-make install'.
+Qt will be installed into 'C:\Qt\Qt5.12.12\5.12.12\mingw73_64'.
+
+Prior to reconfiguration, make sure you remove any leftovers from
+the previous build.
+
+
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers>nmake sub-psql
+'nmake' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers>C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\nmake sub-psql
+'C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\nmake' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers>mingw32-make sub-psql
+cd psql\ && ( if not exist Makefile C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -o Makefile C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\psql\psql.pro ) && mingw32-make -f Makefile
+mingw32-make[1]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make -f Makefile.Release all
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\qsql_psql.o qsql_psql.cpp
+In file included from qsql_psql.cpp:43:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+In file included from C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qobject.h:49,
+                 from C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtSql/qsqldriver.h:44,
+                 from qsql_psql_p.h:54,
+                 from qsql_psql.cpp:40:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h: In instantiation of 'QList<T>::iterator QList<T>::erase(iterator) [with T = QString]':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:354:59:   required from 'void QList<T>::removeLast() [with T = QString]'
+qsql_psql.cpp:1621:31:   required from here
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:536:12: warning: implicitly-declared 'constexpr QList<QString>::iterator& QList<QString>::iterator::operator=(const QList<QString>::iterator&)' is deprecated [-Wdeprecated-copy]
+  536 |         it = begin(); // implies detach()
+      |         ~~~^~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:239:16: note: because 'QList<QString>::iterator' has user-provided 'QList<T>::iterator::iterator(const QList<T>::iterator&) [with T = QString]'
+  239 |         inline iterator(const iterator &o) Q_DECL_NOTHROW : i(o.i){}
+      |                ^~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h: In instantiation of 'QList<T>::iterator QList<T>::erase(iterator) [with T = pg_result*]':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:353:60:   required from 'void QList<T>::removeFirst() [with T = pg_result*]'
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:565:29:   required from 'T QList<T>::takeFirst() [with T = pg_result*]'
+qsql_psql.cpp:464:44:   required from here
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:536:12: warning: implicitly-declared 'constexpr QList<pg_result*>::iterator& QList<pg_result*>::iterator::operator=(const QList<pg_result*>::iterator&)' is deprecated [-Wdeprecated-copy]
+  536 |         it = begin(); // implies detach()
+      |         ~~~^~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:239:16: note: because 'QList<pg_result*>::iterator' has user-provided 'QList<T>::iterator::iterator(const QList<T>::iterator&) [with T = pg_result*]'
+  239 |         inline iterator(const iterator &o) Q_DECL_NOTHROW : i(o.i){}
+      |                ^~~~~~~~
+g++ -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\release\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed main.cpp -o .moc\release\main.moc
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\main.o main.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_psql_p.h -o .moc\release\moc_qsql_psql_p.cpp
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\moc_qsql_psql_p.o .moc\release\moc_qsql_psql_p.cpp
+windres -i qsqlpsql_resource.rc -o .obj\release\qsqlpsql_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -Wl,-s -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlpsql.a -o ..\plugins\sqldrivers\qsqlpsql.dll .obj/release/qsql_psql.o .obj/release/main.o .obj/release/moc_qsql_psql_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sql.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Core.a "C:\Program Files\PostgreSQL\12\lib\libpq.lib" C:\msys64\ucrt64\lib\libws2_32.a C:\msys64\ucrt64\lib\libadvapi32.a .obj\release\qsqlpsql_resource_res.o
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make -f Makefile.Debug all
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\qsql_psql.o qsql_psql.cpp
+In file included from qsql_psql.cpp:43:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+In file included from C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qobject.h:49,
+                 from C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtSql/qsqldriver.h:44,
+                 from qsql_psql_p.h:54,
+                 from qsql_psql.cpp:40:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h: In instantiation of 'QList<T>::iterator QList<T>::erase(iterator) [with T = QString]':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:354:59:   required from 'void QList<T>::removeLast() [with T = QString]'
+qsql_psql.cpp:1621:31:   required from here
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:536:12: warning: implicitly-declared 'constexpr QList<QString>::iterator& QList<QString>::iterator::operator=(const QList<QString>::iterator&)' is deprecated [-Wdeprecated-copy]
+  536 |         it = begin(); // implies detach()
+      |         ~~~^~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:239:16: note: because 'QList<QString>::iterator' has user-provided 'QList<T>::iterator::iterator(const QList<T>::iterator&) [with T = QString]'
+  239 |         inline iterator(const iterator &o) Q_DECL_NOTHROW : i(o.i){}
+      |                ^~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h: In instantiation of 'QList<T>::iterator QList<T>::erase(iterator) [with T = pg_result*]':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:353:60:   required from 'void QList<T>::removeFirst() [with T = pg_result*]'
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:565:29:   required from 'T QList<T>::takeFirst() [with T = pg_result*]'
+qsql_psql.cpp:464:44:   required from here
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:536:12: warning: implicitly-declared 'constexpr QList<pg_result*>::iterator& QList<pg_result*>::iterator::operator=(const QList<pg_result*>::iterator&)' is deprecated [-Wdeprecated-copy]
+  536 |         it = begin(); // implies detach()
+      |         ~~~^~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include/QtCore/qlist.h:239:16: note: because 'QList<pg_result*>::iterator' has user-provided 'QList<T>::iterator::iterator(const QList<T>::iterator&) [with T = pg_result*]'
+  239 |         inline iterator(const iterator &o) Q_DECL_NOTHROW : i(o.i){}
+      |                ^~~~~~~~
+g++ -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\debug\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed main.cpp -o .moc\debug\main.moc
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\main.o main.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_psql_p.h -o .moc\debug\moc_qsql_psql_p.cpp
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -I"C:\Program Files\PostgreSQL\12\include" -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\moc_qsql_psql_p.o .moc\debug\moc_qsql_psql_p.cpp
+windres -i qsqlpsqld_resource.rc -o .obj\debug\qsqlpsqld_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlpsqld.a -o ..\plugins\sqldrivers\qsqlpsqld.dll .obj/debug/qsql_psql.o .obj/debug/main.o .obj/debug/moc_qsql_psql_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sqld.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Cored.a "C:\Program Files\PostgreSQL\12\lib\libpq.lib" C:\msys64\ucrt64\lib\libws2_32.a C:\msys64\ucrt64\lib\libadvapi32.a .obj\debug\qsqlpsqld_resource_res.o
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make[1]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers>mingw32-make install
+cd psql\ && ( if not exist Makefile C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -o Makefile C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\psql\psql.pro ) && mingw32-make -f Makefile install
+mingw32-make[1]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make -f Makefile.Release install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+copy /y ..\plugins\sqldrivers\qsqlpsql.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlpsql.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QPSQLDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QPSQLDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make -f Makefile.Debug install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+copy /y ..\plugins\sqldrivers\qsqlpsqld.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlpsqld.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QPSQLDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QPSQLDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+mingw32-make[1]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/psql'
+cd odbc\ && ( if not exist Makefile C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -o Makefile C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\odbc\odbc.pro ) && mingw32-make -f Makefile install
+mingw32-make[1]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+mingw32-make -f Makefile.Release install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\qsql_odbc.o qsql_odbc.cpp
+In file included from qsql_odbc.cpp:47:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+g++ -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\release\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed main.cpp -o .moc\release\main.moc
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\main.o main.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_odbc_p.h -o .moc\release\moc_qsql_odbc_p.cpp
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\moc_qsql_odbc_p.o .moc\release\moc_qsql_odbc_p.cpp
+windres -i qsqlodbc_resource.rc -o .obj\release\qsqlodbc_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -Wl,-s -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlodbc.a -o ..\plugins\sqldrivers\qsqlodbc.dll .obj/release/qsql_odbc.o .obj/release/main.o .obj/release/moc_qsql_odbc_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sql.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Core.a C:\msys64\ucrt64\lib\libodbc32.a .obj\release\qsqlodbc_resource_res.o
+copy /y ..\plugins\sqldrivers\qsqlodbc.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlodbc.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QODBCDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QODBCDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+mingw32-make -f Makefile.Debug install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\qsql_odbc.o qsql_odbc.cpp
+In file included from qsql_odbc.cpp:47:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+g++ -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\debug\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed main.cpp -o .moc\debug\main.moc
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\main.o main.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_odbc_p.h -o .moc\debug\moc_qsql_odbc_p.cpp
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\moc_qsql_odbc_p.o .moc\debug\moc_qsql_odbc_p.cpp
+windres -i qsqlodbcd_resource.rc -o .obj\debug\qsqlodbcd_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlodbcd.a -o ..\plugins\sqldrivers\qsqlodbcd.dll .obj/debug/qsql_odbc.o .obj/debug/main.o .obj/debug/moc_qsql_odbc_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sqld.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Cored.a C:\msys64\ucrt64\lib\libodbc32.a .obj\debug\qsqlodbcd_resource_res.o
+copy /y ..\plugins\sqldrivers\qsqlodbcd.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlodbcd.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QODBCDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QODBCDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+mingw32-make[1]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/odbc'
+cd sqlite\ && ( if not exist Makefile C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -o Makefile C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\sqlite\sqlite.pro ) && mingw32-make -f Makefile install
+mingw32-make[1]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
+mingw32-make -f Makefile.Release install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\qsql_sqlite.o qsql_sqlite.cpp
+In file included from qsql_sqlite.cpp:44:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+g++ -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\release\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/3rdparty/sqlite -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed smain.cpp -o .moc\release\smain.moc
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\smain.o smain.cpp
+gcc -c -fno-keep-inline-dllexport -O2 -std=gnu11 -fno-exceptions -Wall -W -Wextra -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\sqlite3.o C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'sqlite3ThreadJoin':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:31052:8: warning: variable 'bRc' set but not used [-Wunused-but-set-variable]
+31052 |   BOOL bRc;
+      |        ^~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'winUnfetch':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:46907:45: warning: unused parameter 'iOff' [-Wunused-parameter]
+46907 | static int winUnfetch(sqlite3_file *fd, i64 iOff, void *p){
+      |                                         ~~~~^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'cellArea':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194330:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194330 |       case 5:  area  = p->aCoord[9].f - p->aCoord[8].f;
+       |                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194331:7: note: here
+194331 |       case 4:  area *= p->aCoord[7].f - p->aCoord[6].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194331:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194331 |       case 4:  area *= p->aCoord[7].f - p->aCoord[6].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194332:7: note: here
+194332 |       case 3:  area *= p->aCoord[5].f - p->aCoord[4].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194332:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194332 |       case 3:  area *= p->aCoord[5].f - p->aCoord[4].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194333:7: note: here
+194333 |       case 2:  area *= p->aCoord[3].f - p->aCoord[2].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194333:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194333 |       case 2:  area *= p->aCoord[3].f - p->aCoord[2].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194334:7: note: here
+194334 |       default: area *= p->aCoord[1].f - p->aCoord[0].f;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194340:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194340 |       case 5:  area  = (i64)p->aCoord[9].i - (i64)p->aCoord[8].i;
+       |                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194341:7: note: here
+194341 |       case 4:  area *= (i64)p->aCoord[7].i - (i64)p->aCoord[6].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194341:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194341 |       case 4:  area *= (i64)p->aCoord[7].i - (i64)p->aCoord[6].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194342:7: note: here
+194342 |       case 3:  area *= (i64)p->aCoord[5].i - (i64)p->aCoord[4].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194342:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194342 |       case 3:  area *= (i64)p->aCoord[5].i - (i64)p->aCoord[4].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194343:7: note: here
+194343 |       case 2:  area *= (i64)p->aCoord[3].i - (i64)p->aCoord[2].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194343:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194343 |       case 2:  area *= (i64)p->aCoord[3].i - (i64)p->aCoord[2].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194344:7: note: here
+194344 |       default: area *= (i64)p->aCoord[1].i - (i64)p->aCoord[0].i;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'rtreeCallbackConstraint':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193483:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193483 |                 readCoord(pCellData+32, &c); aCoord[8] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193484:7: note: here
+193484 |       case 8:   readCoord(pCellData+28, &c); aCoord[7] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193485:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193485 |                 readCoord(pCellData+24, &c); aCoord[6] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193486:7: note: here
+193486 |       case 6:   readCoord(pCellData+20, &c); aCoord[5] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193487:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193487 |                 readCoord(pCellData+16, &c); aCoord[4] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193488:7: note: here
+193488 |       case 4:   readCoord(pCellData+12, &c); aCoord[3] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193489:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193489 |                 readCoord(pCellData+8,  &c); aCoord[2] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193490:7: note: here
+193490 |       default:  readCoord(pCellData+4,  &c); aCoord[1] = c.f;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193498:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193498 |                 readCoord(pCellData+32, &c); aCoord[8] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193499:7: note: here
+193499 |       case 8:   readCoord(pCellData+28, &c); aCoord[7] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193500:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193500 |                 readCoord(pCellData+24, &c); aCoord[6] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193501:7: note: here
+193501 |       case 6:   readCoord(pCellData+20, &c); aCoord[5] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193502:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193502 |                 readCoord(pCellData+16, &c); aCoord[4] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193503:7: note: here
+193503 |       case 4:   readCoord(pCellData+12, &c); aCoord[3] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193504:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193504 |                 readCoord(pCellData+8,  &c); aCoord[2] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193505:7: note: here
+193505 |       default:  readCoord(pCellData+4,  &c); aCoord[1] = c.i;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'rtreeNonleafConstraint':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193560:9: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193560 |       if( p->op!=RTREE_EQ ) break;  /* RTREE_LE and RTREE_LT end here */
+       |         ^
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193563:5: note: here
+193563 |     default: /* RTREE_GT or RTREE_GE,  or fallthrough of RTREE_EQ */
+       |     ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'sqlite3Fts5IndexQuery':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:226544:18: warning: 'memcpy' specified bound 18446744073709551615 exceeds maximum object size 9223372036854775807 [-Wstringop-overflow=]
+226544 |     if( nToken ) memcpy(&buf.p[1], pToken, nToken);
+       |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In function 'nodeReaderRelease',
+    inlined from 'fts3IncrmergeLoad' at C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:185654:9,
+    inlined from 'sqlite3Fts3Incrmerge' at C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:186309:14:
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:185102:23: warning: 'reader.term.a' may be used uninitialized [-Wmaybe-uninitialized]
+185102 |   sqlite3_free(p->term.a);
+       |                ~~~~~~~^~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'sqlite3Fts3Incrmerge':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:185623:20: note: 'reader' declared here
+185623 |         NodeReader reader;
+       |                    ^~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite/.moc/release/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/3rdparty/sqlite -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_sqlite_p.h -o .moc\release\moc_qsql_sqlite_p.cpp
+g++ -c -fno-keep-inline-dllexport -O2 -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\release -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\release\moc_qsql_sqlite_p.o .moc\release\moc_qsql_sqlite_p.cpp
+windres -i qsqlite_resource.rc -o .obj\release\qsqlite_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DNDEBUG -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -Wl,-s -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlite.a -o ..\plugins\sqldrivers\qsqlite.dll .obj/release/qsql_sqlite.o .obj/release/smain.o .obj/release/sqlite3.o .obj/release/moc_qsql_sqlite_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sql.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Core.a .obj\release\qsqlite_resource_res.o
+copy /y ..\plugins\sqldrivers\qsqlite.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlite.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QSQLiteDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QSQLiteDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
+mingw32-make -f Makefile.Debug install
+mingw32-make[2]: Entering directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\qsql_sqlite.o qsql_sqlite.cpp
+In file included from qsql_sqlite.cpp:44:
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h: In constructor 'QVariant::QVariant(QVariant&&)':
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:273:25: warning: implicitly-declared 'constexpr QVariant::Private& QVariant::Private::operator (const QVariant::Private&)' is deprecated [-Wdeprecated-copy]
+  273 |     { other.d = Private(); }
+      |                         ^
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore/qvariant.h:399:16: note: because 'QVariant::Private' has user-provided 'QVariant::Private::Private(const QVariant::Private&)'
+  399 |         inline Private(const Private &other) Q_DECL_NOTHROW
+      |                ^~~~~~~
+g++ -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -dM -E -o .moc\debug\moc_predefs.h C:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\features\data\dummy.cpp
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/3rdparty/sqlite -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed smain.cpp -o .moc\debug\smain.moc
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\smain.o smain.cpp
+gcc -c -fno-keep-inline-dllexport -g -Og -std=gnu11 -fno-exceptions -Wall -W -Wextra -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\sqlite3.o C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'sqlite3ThreadJoin':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:31052:8: warning: variable 'bRc' set but not used [-Wunused-but-set-variable]
+31052 |   BOOL bRc;
+      |        ^~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'winUnfetch':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:46907:45: warning: unused parameter 'iOff' [-Wunused-parameter]
+46907 | static int winUnfetch(sqlite3_file *fd, i64 iOff, void *p){
+      |                                         ~~~~^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'cellArea':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194330:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194330 |       case 5:  area  = p->aCoord[9].f - p->aCoord[8].f;
+       |                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194331:7: note: here
+194331 |       case 4:  area *= p->aCoord[7].f - p->aCoord[6].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194331:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194331 |       case 4:  area *= p->aCoord[7].f - p->aCoord[6].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194332:7: note: here
+194332 |       case 3:  area *= p->aCoord[5].f - p->aCoord[4].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194332:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194332 |       case 3:  area *= p->aCoord[5].f - p->aCoord[4].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194333:7: note: here
+194333 |       case 2:  area *= p->aCoord[3].f - p->aCoord[2].f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194333:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194333 |       case 2:  area *= p->aCoord[3].f - p->aCoord[2].f;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194334:7: note: here
+194334 |       default: area *= p->aCoord[1].f - p->aCoord[0].f;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194340:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194340 |       case 5:  area  = (i64)p->aCoord[9].i - (i64)p->aCoord[8].i;
+       |                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194341:7: note: here
+194341 |       case 4:  area *= (i64)p->aCoord[7].i - (i64)p->aCoord[6].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194341:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194341 |       case 4:  area *= (i64)p->aCoord[7].i - (i64)p->aCoord[6].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194342:7: note: here
+194342 |       case 3:  area *= (i64)p->aCoord[5].i - (i64)p->aCoord[4].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194342:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194342 |       case 3:  area *= (i64)p->aCoord[5].i - (i64)p->aCoord[4].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194343:7: note: here
+194343 |       case 2:  area *= (i64)p->aCoord[3].i - (i64)p->aCoord[2].i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194343:21: warning: this statement may fall through [-Wimplicit-fallthrough=]
+194343 |       case 2:  area *= (i64)p->aCoord[3].i - (i64)p->aCoord[2].i;
+       |                ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:194344:7: note: here
+194344 |       default: area *= (i64)p->aCoord[1].i - (i64)p->aCoord[0].i;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'rtreeCallbackConstraint':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193483:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193483 |                 readCoord(pCellData+32, &c); aCoord[8] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193484:7: note: here
+193484 |       case 8:   readCoord(pCellData+28, &c); aCoord[7] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193485:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193485 |                 readCoord(pCellData+24, &c); aCoord[6] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193486:7: note: here
+193486 |       case 6:   readCoord(pCellData+20, &c); aCoord[5] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193487:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193487 |                 readCoord(pCellData+16, &c); aCoord[4] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193488:7: note: here
+193488 |       case 4:   readCoord(pCellData+12, &c); aCoord[3] = c.f;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193489:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193489 |                 readCoord(pCellData+8,  &c); aCoord[2] = c.f;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193490:7: note: here
+193490 |       default:  readCoord(pCellData+4,  &c); aCoord[1] = c.f;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193498:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193498 |                 readCoord(pCellData+32, &c); aCoord[8] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193499:7: note: here
+193499 |       case 8:   readCoord(pCellData+28, &c); aCoord[7] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193500:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193500 |                 readCoord(pCellData+24, &c); aCoord[6] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193501:7: note: here
+193501 |       case 6:   readCoord(pCellData+20, &c); aCoord[5] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193502:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193502 |                 readCoord(pCellData+16, &c); aCoord[4] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193503:7: note: here
+193503 |       case 4:   readCoord(pCellData+12, &c); aCoord[3] = c.i;
+       |       ^~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193504:56: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193504 |                 readCoord(pCellData+8,  &c); aCoord[2] = c.i;
+       |                                              ~~~~~~~~~~^~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193505:7: note: here
+193505 |       default:  readCoord(pCellData+4,  &c); aCoord[1] = c.i;
+       |       ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c: In function 'rtreeNonleafConstraint':
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193560:9: warning: this statement may fall through [-Wimplicit-fallthrough=]
+193560 |       if( p->op!=RTREE_EQ ) break;  /* RTREE_LE and RTREE_LT end here */
+       |         ^
+C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite\sqlite3.c:193563:5: note: here
+193563 |     default: /* RTREE_GT or RTREE_GE,  or fallthrough of RTREE_EQ */
+       |     ^~~~~~~
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB --include C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite/.moc/debug/moc_predefs.h -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/mkspecs/win32-g++ -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite -IC:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/3rdparty/sqlite -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql/5.12.12/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12 -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore/5.12.12/QtCore -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtSql -IC:/Qt/Qt5.12.12/5.12.12/mingw73_64/include/QtCore -IC:/msys64/ucrt64/include/c++/13.1.0 -IC:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32 -IC:/msys64/ucrt64/include/c++/13.1.0/backward -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/msys64/ucrt64/include -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed qsql_sqlite_p.h -o .moc\debug\moc_qsql_sqlite_p.cpp
+g++ -c -fno-keep-inline-dllexport -g -Og -std=c++1z -fno-exceptions -Wall -W -Wextra -Wvla -Wdate-time -Wshift-overflow=2 -Wduplicated-cond -Wno-stringop-overflow -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -I. -IC:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\3rdparty\sqlite -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql\5.12.12\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12 -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore\5.12.12\QtCore -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtSql -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\include\QtCore -I.moc\debug -IC:\openssl\include -IC:\Utils\my_sql\mysql-5.6.11-winx64\include -IC:\Utils\postgresql\pgsql\include -IC:\Qt\Qt5.12.12\5.12.12\mingw73_64\mkspecs\win32-g++  -o .obj\debug\moc_qsql_sqlite_p.o .moc\debug\moc_qsql_sqlite_p.cpp
+windres -i qsqlited_resource.rc -o .obj\debug\qsqlited_resource_res.o --include-dir=. -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_OMIT_COMPLETE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DQT_DEPRECATED_WARNINGS -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_NO_EXCEPTIONS -DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB
+g++ -shared -Wl,-subsystem,windows -Wl,--out-implib,C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\plugins\sqldrivers\libqsqlited.a -o ..\plugins\sqldrivers\qsqlited.dll .obj/debug/qsql_sqlite.o .obj/debug/smain.o .obj/debug/sqlite3.o .obj/debug/moc_qsql_sqlite_p.o  -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Sqld.a C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\libQt5Cored.a .obj\debug\qsqlited_resource_res.o
+copy /y ..\plugins\sqldrivers\qsqlited.dll C:\Qt\Qt5.12.12\5.12.12\mingw73_64\plugins\sqldrivers\qsqlited.dll
+        1 file(s) copied.
+C:\Qt\Qt5.12.12\5.12.12\mingw73_64\bin\qmake.exe -install qinstall C:\Qt\Qt5.12.12\5.12.12\Src\qtbase\src\plugins\sqldrivers\lib\cmake\Qt5Sql\Qt5Sql_QSQLiteDriverPlugin.cmake C:\Qt\Qt5.12.12\5.12.12\mingw73_64\lib\cmake\Qt5Sql\Qt5Sql_QSQLiteDriverPlugin.cmake
+mingw32-make[2]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
+mingw32-make[1]: Leaving directory 'C:/Qt/Qt5.12.12/5.12.12/Src/qtbase/src/plugins/sqldrivers/sqlite'
