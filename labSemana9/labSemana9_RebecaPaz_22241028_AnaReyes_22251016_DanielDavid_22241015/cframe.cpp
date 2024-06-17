@@ -228,6 +228,7 @@ void cFrame::on_btn_insertarBD_clicked()
            } else {
 
            }
+           QMessageBox::information(this, "Datos cargados", "se exportaron los datos a la base de datos.");
        }
 
    }else{
