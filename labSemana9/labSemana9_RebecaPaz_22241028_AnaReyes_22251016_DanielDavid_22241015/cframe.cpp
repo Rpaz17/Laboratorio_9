@@ -268,73 +268,83 @@ void cFrame::on_btn_salir_clicked()
 
 bool cFrame::insertarUpdateCono(cono *nuevoCono)
 {
-    string nombreNuevo = nuevoCono->getNombre();
-       bool insertado = false;
+    ifstream archivo(arch);
 
-
-       on_btn_cargarAL_clicked();
-
-       for (auto figura : listaPolimorfica)
+       if (!archivo.is_open())
        {
-           if (cono* c = dynamic_cast<cono*>(figura))
+          QMessageBox::critical(this, "EROR", "que dundis no puede :p.");
+           return false;
+       }
+
+       string linea;
+       while (std::getline(archivo, linea))
+       {
+           stringstream ss(linea);
+           string nombre, tipo;
+           double radio, altura = 0.0;
+
+           getline(ss, nombre, '\t');
+           getline(ss, tipo, '\t');
+           ss >> radio;
+           ss >> altura;
+
+           if (tipo == "Cono" && nombre == nuevoCono->getNombre())
            {
-               if (c->getNombre() == nombreNuevo)
-               {
-                   c->setRad(nuevoCono->getRad());
-                   c->setAltura(nuevoCono->getAltura());
-                   insertado = true;
-                   break;
-               }
+               archivo.close();
+               return false;
            }
        }
+       archivo.close();
 
-       if (!insertado)
+      ofstream archivo_out(arch, std::ios::out | std::ios::app);
+       if (!archivo_out.is_open())
        {
-
-           listaPolimorfica.push_back(nuevoCono);
-           insertado = true;
+           QMessageBox::critical(this, "EROR", "que dundis no puede :p.");
+           return false;
        }
 
-
-       exportar();
-
-       return insertado;
+       archivo_out << nuevoCono->getNombre() << "Cono\t" << nuevoCono->getRad() << "\t" << nuevoCono->getAltura() <<endl;
+       archivo_out.close();
+       return true;
 }
 
 bool cFrame::insertarUpdateEsfera(esfera *nuevaEsfera)
 {
-    string nombreNuevo = nuevaEsfera->getNombre();
-       bool insertado = false;
+    ifstream archivo(arch);
 
+      if (!archivo.is_open())
+      {
+          QMessageBox::critical(this, "EROR", "que dundis no puede :p.");
+          return false;
+      }
 
-       on_btn_cargarAL_clicked();
+      string linea;
+      while (std::getline(archivo, linea)) {
+          stringstream ss(linea);
+          string nombre, tipo;
+          double radio;
 
+          getline(ss, nombre, '\t');
+          getline(ss, tipo, '\t');
+          ss >> radio;
 
-       for (auto figura : listaPolimorfica)
-       {
-           if (esfera* e = dynamic_cast<esfera*>(figura))
-           {
-               if (e->getNombre() == nombreNuevo)
-               {
+          if (tipo == "Esfera" && nombre == nuevaEsfera->getNombre())
+          {
+              archivo.close();
+              return false;
+          }
+      }
+      archivo.close();
 
-                   e->setRad(nuevaEsfera->getRad());
-                   insertado = true;
-                   break;
-               }
-           }
-       }
+      ofstream archivo_out(arch, std::ios::out | std::ios::app);
+      if (!archivo_out.is_open())
+      {
+          QMessageBox::critical(this, "EROR", "que dundis no puede :p.");
+          return false;
+      }
 
-       if (!insertado)
-       {
-
-           listaPolimorfica.push_back(nuevaEsfera);
-           insertado = true;
-       }
-
-
-       exportar();
-
-
-       return insertado;
+      archivo_out << nuevaEsfera->getNombre() << "Esfera\t" << nuevaEsfera->getRad() << "\t" <<endl;
+      archivo_out.close();
+      return true;
 }
 
