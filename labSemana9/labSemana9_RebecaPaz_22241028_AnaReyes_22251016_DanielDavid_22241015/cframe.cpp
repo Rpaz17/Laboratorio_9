@@ -268,50 +268,73 @@ void cFrame::on_btn_salir_clicked()
 
 bool cFrame::insertarUpdateCono(cono *nuevoCono)
 {
-    bool insertado = false;
-      string nombreNuevo = nuevoCono->getNombre();
+    string nombreNuevo = nuevoCono->getNombre();
+       bool insertado = false;
 
 
-      for (auto figura : listaPolimorfica)
-      {
-          if (cono* c = dynamic_cast<cono*>(figura))
-          {
-              if (c->getNombre() == nombreNuevo)
-              {
+       on_btn_cargarAL_clicked();
 
-                  return false;
-              }
-          }
-      }
+       for (auto figura : listaPolimorfica)
+       {
+           if (cono* c = dynamic_cast<cono*>(figura))
+           {
+               if (c->getNombre() == nombreNuevo)
+               {
+                   c->setRad(nuevoCono->getRad());
+                   c->setAltura(nuevoCono->getAltura());
+                   insertado = true;
+                   break;
+               }
+           }
+       }
+
+       if (!insertado)
+       {
+
+           listaPolimorfica.push_back(nuevoCono);
+           insertado = true;
+       }
 
 
-      listaPolimorfica.push_back(nuevoCono);
-      insertado = true;
+       exportar();
 
-      return insertado;
-
+       return insertado;
 }
 
 bool cFrame::insertarUpdateEsfera(esfera *nuevaEsfera)
 {
-    bool insert = false;
+    string nombreNuevo = nuevaEsfera->getNombre();
+       bool insertado = false;
 
-     string nombreNuevo = nuevaEsfera->getNombre();
 
-      for (auto figura : listaPolimorfica)
-      {
-          if (esfera* e = dynamic_cast<esfera*>(figura))
-          {
-              if (e->getNombre() == nombreNuevo)
-              {
+       on_btn_cargarAL_clicked();
 
-                  return false;
-              }
-          }
-      }
-      listaPolimorfica.push_back(nuevaEsfera);
-      insert = true;
 
-      return insert;
+       for (auto figura : listaPolimorfica)
+       {
+           if (esfera* e = dynamic_cast<esfera*>(figura))
+           {
+               if (e->getNombre() == nombreNuevo)
+               {
+
+                   e->setRad(nuevaEsfera->getRad());
+                   insertado = true;
+                   break;
+               }
+           }
+       }
+
+       if (!insertado)
+       {
+
+           listaPolimorfica.push_back(nuevaEsfera);
+           insertado = true;
+       }
+
+
+       exportar();
+
+
+       return insertado;
 }
 
