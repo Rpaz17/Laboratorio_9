@@ -268,11 +268,50 @@ void cFrame::on_btn_salir_clicked()
 
 bool cFrame::insertarUpdateCono(cono *nuevoCono)
 {
+    bool insertado = false;
+      string nombreNuevo = nuevoCono->getNombre();
+
+
+      for (auto figura : listaPolimorfica)
+      {
+          if (cono* c = dynamic_cast<cono*>(figura))
+          {
+              if (c->getNombre() == nombreNuevo)
+              {
+
+                  return false;
+              }
+          }
+      }
+
+
+      listaPolimorfica.push_back(nuevoCono);
+      insertado = true;
+
+      return insertado;
 
 }
 
 bool cFrame::insertarUpdateEsfera(esfera *nuevaEsfera)
 {
+    bool insert = false;
 
+     string nombreNuevo = nuevaEsfera->getNombre();
+
+      for (auto figura : listaPolimorfica)
+      {
+          if (esfera* e = dynamic_cast<esfera*>(figura))
+          {
+              if (e->getNombre() == nombreNuevo)
+              {
+
+                  return false;
+              }
+          }
+      }
+      listaPolimorfica.push_back(nuevaEsfera);
+      insert = true;
+
+      return insert;
 }
 
